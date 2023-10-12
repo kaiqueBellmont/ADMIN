@@ -117,6 +117,9 @@ function Notifications() {
         <Grid container spacing={3} justifyContent="center">
           <Grid item xs={12} lg={8}>
             <Card>
+              <MDAlert color="primary" dismissible >
+                {alertContent("primary")}
+              </MDAlert>
               <MDBox p={2}>
                 <MDTypography variant="h5">Alerts</MDTypography>
               </MDBox>

@@ -64,20 +64,20 @@ function Projects() {
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <MDBox>
           <MDTypography variant="h6" gutterBottom>
-            Projects
+            Cursos Mais visualizados
           </MDTypography>
           <MDBox display="flex" alignItems="center" lineHeight={0}>
             <Icon
               sx={{
                 fontWeight: "bold",
-                color: ({ palette: { info } }) => info.main,
+                color: ({ palette: { success } }) => success.main,
                 mt: -0.5,
               }}
             >
-              done
+              add
             </Icon>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              &nbsp;<strong>30 done</strong> this month
+              &nbsp;<strong>30 cursos</strong> adicionados esse mês
             </MDTypography>
           </MDBox>
         </MDBox>

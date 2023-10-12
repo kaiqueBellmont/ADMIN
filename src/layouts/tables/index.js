@@ -12,6 +12,8 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+import styles from './index.module.scss'
+import React, { useState } from 'react';
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -30,10 +32,46 @@ import DataTable from "examples/Tables/DataTable";
 // Data
 import authorsTableData from "layouts/tables/data/authorsTableData";
 import projectsTableData from "layouts/tables/data/projectsTableData";
+import MDSnackbar from "components/MDSnackbar";
+
+import MDButton from "components/MDButton";
+
+
 
 function Tables() {
+
   const { columns, rows } = authorsTableData();
   const { columns: pColumns, rows: pRows } = projectsTableData();
+
+
+  const [successSB, setSuccessSB] = useState(false);
+  const [infoSB, setInfoSB] = useState(false);
+  const [warningSB, setWarningSB] = useState(false);
+  const [errorSB, setErrorSB] = useState(false);
+
+  const openSuccessSB = () => setSuccessSB(true);
+  const closeSuccessSB = () => setSuccessSB(false);
+  const openInfoSB = () => setInfoSB(true);
+  const closeInfoSB = () => setInfoSB(false);
+  const openWarningSB = () => setWarningSB(true);
+  const closeWarningSB = () => setWarningSB(false);
+  const openErrorSB = () => setErrorSB(true);
+  const closeErrorSB = () => setErrorSB(false);
+
+
+  const renderSuccessSB = (
+    <MDSnackbar
+      color="success"
+      icon="check"
+      title="Curso Adicionado"
+      content="O curso X foi adicionado a base."
+      dateTime="Adicionado agora"
+      open={successSB}
+      onClose={closeSuccessSB}
+      close={closeSuccessSB}
+      bgWhite
+    />
+  );
 
   return (
     <DashboardLayout>
@@ -48,22 +86,30 @@ function Tables() {
                 py={3}
                 px={2}
                 variant="gradient"
-                bgColor="info"
+                bgColor="primary"
                 borderRadius="lg"
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Authors Table
+                  Adicionar Cursos
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
-                <DataTable
-                  table={{ columns, rows }}
-                  isSorted={false}
-                  entriesPerPage={false}
-                  showTotalEntries={false}
-                  noEndBorder
-                />
+                <div className={styles.courses}>
+                  <span>
+                    Campo 1
+                  </span>
+                  <span>
+                    Campo 2
+                  </span>
+                  <span>
+                    Campo 3
+                  </span>
+                  <MDButton variant="gradient" color="success" onClick={openSuccessSB} >
+                    Adicionar Curso
+                  </MDButton>
+                  {renderSuccessSB}
+                </div>
               </MDBox>
             </Card>
           </Grid>
@@ -80,7 +126,7 @@ function Tables() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Projects Table
+                  Cursos  adicionados
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>

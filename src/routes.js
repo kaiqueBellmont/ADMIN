@@ -59,9 +59,9 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Tables",
+    name: "Cursos",
     key: "tables",
-    icon: <Icon fontSize="small">table_view</Icon>,
+    icon: <Icon fontSize="small">ondemand_video_icon</Icon>,
     route: "/tables",
     component: <Tables />,
   },
