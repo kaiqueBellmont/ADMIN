@@ -36,13 +36,20 @@ import MDSnackbar from "components/MDSnackbar";
 
 import MDButton from "components/MDButton";
 
+import SelectTextFields from 'components/selects/index'
+import SimpleInput from 'components/inputs/index'
 
 
 function Tables() {
+  const [selectedTopic, setSelectedTopic] = useState(null);
+
 
   const { columns, rows } = authorsTableData();
   const { columns: pColumns, rows: pRows } = projectsTableData();
 
+  const handleTopicChange = (value) => {
+    setSelectedTopic(value);
+  };
 
   const [successSB, setSuccessSB] = useState(false);
   const [infoSB, setInfoSB] = useState(false);
@@ -86,18 +93,32 @@ function Tables() {
                 py={3}
                 px={2}
                 variant="gradient"
-                bgColor="cyan"
+                bgColor="info"
                 borderRadius="lg"
                 coloredShadow="info"
               >
-                <MDTypography variant="h6" color="black">
+                <MDTypography variant="h6" color="white">
                   Adicionar Cursos
                 </MDTypography>
               </MDBox>
+
               <MDBox pt={3}>
-                <div className={styles.courses}>
-                  
-                  <MDButton variant="gradient" color="cyan" onClick={openSuccessSB} >
+                <div className={styles.add_courses_wrapper}>
+                  <div className={styles.courses}>
+                    <SelectTextFields onTopicChange={handleTopicChange} />
+                    <SelectTextFields onTopicChange={handleTopicChange} />
+                    <SelectTextFields onTopicChange={handleTopicChange} />
+                    <SimpleInput />
+                  </div>
+                  <MDButton
+                    variant="gradient"
+                    color="success"
+                    onClick={() => {
+                      openSuccessSB();
+                      console.log('Valor selecionado:', selectedTopic);
+                    }}
+                    className={styles.button}
+                  >
                     Adicionar Curso
                   </MDButton>
                   {renderSuccessSB}

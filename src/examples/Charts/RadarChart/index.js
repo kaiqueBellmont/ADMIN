@@ -41,8 +41,6 @@ import MDTypography from "components/MDTypography";
 // RadarChart configurations
 import configs from "examples/Charts/RadarChart/configs";
 
-// Material Dashboard 2 React base styles
-import colors from "assets/theme/base/colors";
 
 // Material Dashboard 2 React helper functions
 import rgba from "assets/theme/functions/rgba";
@@ -52,11 +50,11 @@ ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, 
 function RadarChart({ icon, title, description, height, chart }) {
   const chartDatasets = chart.datasets
     ? chart.datasets.map((dataset) => ({
-        ...dataset,
-        backgroundColor: colors[dataset.color]
-          ? rgba(colors[dataset.color || "dark"].main, 0.2)
-          : rgba(colors.dark.main, 0.2),
-      }))
+      ...dataset,
+      backgroundColor: colors[dataset.color]
+        ? rgba(colors[dataset.color || "dark"].main, 0.2)
+        : rgba(colors.dark.main, 0.2),
+    }))
     : [];
 
   const { data, options } = configs(chart.labels || [], chartDatasets);

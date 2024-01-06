@@ -15,12 +15,13 @@ import MDBox from "components/MDBox";
 import Sidenav from "examples/Sidenav";
 import Configurator from "examples/Configurator";
 
-// Material Dashboard 2 React themes
-import theme from "assets/theme";
+
 
 // Material Dashboard 2 React Dark Mode themes
 import themeDark from "assets/theme-dark";
 
+
+import styles from '../src/styles/globals.scss'
 
 
 // Material Dashboard 2 React routes
@@ -48,7 +49,7 @@ export default function App() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const { pathname } = useLocation();
 
-  
+
 
   // Open sidenav when mouse enter on mini sidenav
   const handleOnMouseEnter = () => {
@@ -118,7 +119,7 @@ export default function App() {
   );
 
   return (
-    <ThemeProvider theme={darkMode ? themeDark : theme}>
+    <ThemeProvider theme={themeDark}>
       <CssBaseline />
       {layout === "dashboard" && (
         <>

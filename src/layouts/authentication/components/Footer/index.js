@@ -24,9 +24,8 @@ import Icon from "@mui/material/Icon";
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
+import typography from "assets/theme-dark/base/typography";
 
-// Material Dashboard 2 React base styles
-import typography from "assets/theme/base/typography";
 
 function Footer({ light }) {
   const { size } = typography;
