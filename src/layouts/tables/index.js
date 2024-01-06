@@ -86,26 +86,18 @@ function Tables() {
                 py={3}
                 px={2}
                 variant="gradient"
-                bgColor="primary"
+                bgColor="cyan"
                 borderRadius="lg"
                 coloredShadow="info"
               >
-                <MDTypography variant="h6" color="white">
+                <MDTypography variant="h6" color="black">
                   Adicionar Cursos
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
                 <div className={styles.courses}>
-                  <span>
-                    Campo 1
-                  </span>
-                  <span>
-                    Campo 2
-                  </span>
-                  <span>
-                    Campo 3
-                  </span>
-                  <MDButton variant="gradient" color="success" onClick={openSuccessSB} >
+                  
+                  <MDButton variant="gradient" color="cyan" onClick={openSuccessSB} >
                     Adicionar Curso
                   </MDButton>
                   {renderSuccessSB}

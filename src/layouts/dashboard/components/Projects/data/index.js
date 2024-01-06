@@ -34,6 +34,18 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
+
+  const Progress = ({ color, value }) => (
+    <MDBox display="flex" alignItems="center">
+      <MDTypography variant="caption" color="text" fontWeight="medium">
+        {value}%
+      </MDTypography>
+      <MDBox ml={0.5} width="9rem">
+        <MDProgress variant="gradient" color={color} value={value} />
+      </MDBox>
+    </MDBox>
+  );
+
 export default function data() {
   const avatars = (members) =>
     members.map(([image, name]) => (
@@ -73,11 +85,101 @@ export default function data() {
     columns: [
       { Header: "companies", accessor: "companies", width: "45%", align: "left" },
       { Header: "members", accessor: "members", width: "10%", align: "left" },
-      { Header: "budget", accessor: "budget", align: "center" },
-      { Header: "completion", accessor: "completion", align: "center" },
+      { Header: "Horas", accessor: "budget", align: "center" },
+      { Header: "media", accessor: "completion", align: "center" },
     ],
 
     rows: [
+      {
+        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        members: (
+          <MDBox display="flex" py={1}>
+            {avatars([
+              [team1, "Ryan Tompson"],
+              [team2, "Romina Hadid"],
+              [team3, "Alexander Smith"],
+              [team4, "Jessica Doe"],
+            ])}
+          </MDBox>
+        ),
+        budget: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            80
+          </MDTypography>
+        ),
+        completion: (
+          <Progress color="info" value={70} />
+        ),
+      },
+      {
+        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        members: (
+          <MDBox display="flex" py={1}>
+            {avatars([
+              [team1, "Ryan Tompson"],
+              [team2, "Romina Hadid"],
+              [team3, "Alexander Smith"],
+              [team4, "Jessica Doe"],
+            ])}
+          </MDBox>
+        ),
+        budget: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            $14,000
+          </MDTypography>
+        ),
+        completion: (
+          <MDBox width="8rem" textAlign="left">
+            <MDProgress value={60} color="info" variant="gradient" label={false} />
+          </MDBox>
+        ),
+      },
+      {
+        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        members: (
+          <MDBox display="flex" py={1}>
+            {avatars([
+              [team1, "Ryan Tompson"],
+              [team2, "Romina Hadid"],
+              [team3, "Alexander Smith"],
+              [team4, "Jessica Doe"],
+            ])}
+          </MDBox>
+        ),
+        budget: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            $14,000
+          </MDTypography>
+        ),
+        completion: (
+          <MDBox width="8rem" textAlign="left">
+            <MDProgress value={60} color="info" variant="gradient" label={false} />
+          </MDBox>
+        ),
+      },
+      {
+        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        members: (
+          <MDBox display="flex" py={1}>
+            {avatars([
+              [team1, "Ryan Tompson"],
+              [team2, "Romina Hadid"],
+              [team3, "Alexander Smith"],
+              [team4, "Jessica Doe"],
+            ])}
+          </MDBox>
+        ),
+        budget: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            $14,000
+          </MDTypography>
+        ),
+        completion: (
+          <MDBox width="8rem" textAlign="left">
+            <MDProgress value={60} color="info" variant="gradient" label={false} />
+          </MDBox>
+        ),
+      },
       {
         companies: <Company image={logoXD} name="Material UI XD Version" />,
         members: (

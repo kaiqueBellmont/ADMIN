@@ -24,7 +24,7 @@ function configs(labels, datasets) {
           borderWidth: 0,
           borderRadius: 4,
           borderSkipped: false,
-          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          backgroundColor: "rgba(103, 242, 209, 1)",
           data: datasets.data,
           maxBarThickness: 6,
         },

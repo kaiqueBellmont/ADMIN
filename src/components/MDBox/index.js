@@ -35,7 +35,7 @@ const MDBox = forwardRef(
 MDBox.defaultProps = {
   variant: "contained",
   bgColor: "transparent",
-  color: "dark",
+  color: "cyan",
   opacity: 1,
   borderRadius: "none",
   shadow: "none",

@@ -61,6 +61,11 @@ const colors = {
     focus: "#1662C4",
   },
 
+  cyan: {
+    main: "#00FFFF",
+    state: "#00FFFF",
+  },
+
   success: {
     main: "#4CAF50",
     focus: "#67bb6a",
@@ -110,8 +115,13 @@ const colors = {
     },
 
     info: {
-      main: "#49a3f1",
-      state: "#1A73E8",
+      main: "#EC407A",
+      state: "#EC407A",
+    },
+
+    cyan: {
+      main: "#00FFFF",
+      state: "#00FFFF",
     },
 
     success: {

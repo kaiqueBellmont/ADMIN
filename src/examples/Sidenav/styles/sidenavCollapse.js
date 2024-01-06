@@ -25,10 +25,8 @@ function collapseItem(theme, ownerState) {
     background: active
       ? linearGradient(gradients[sidenavColor].main, gradients[sidenavColor].state)
       : transparent.main,
-    color:
-      (transparentSidenav && !darkMode && !active) || (whiteSidenav && !active)
-        ? dark.main
-        : white.main,
+    color: "#ffffff",
+    fontWeight: "bold",
     display: "flex",
     alignItems: "center",
     width: "100%",

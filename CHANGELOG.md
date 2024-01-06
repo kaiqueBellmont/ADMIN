@@ -373,9 +373,6 @@ ajv                        6.9.1   →   6.10.0
 
 ## [1.6.0] 2019-02-13
 
-### Nice stuff
-
-- [Added RTL support](https://github.com/creativetimofficial/material-dashboard-react/issues/16)
 
 ### Bug Fixing
 
@@ -406,7 +403,6 @@ ajv                        6.9.1   →   6.10.0
 - **src/components/FixedPlugin/FixedPlugin.jsx**(Left menu used by us for customization - due to this, we've had to add a link for the fonts awesome cdn)
 - **src/components/Header/RTLHeaderLinks.jsx**
 - **src/layouts/Admin.jsx** (instead of Dashboard)
-- **src/layouts/RTL.jsx**
 - **src/views/RTLPage/RTLPage.jsx**
 
 ### Deleted components

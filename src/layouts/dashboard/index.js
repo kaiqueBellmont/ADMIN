@@ -28,7 +28,7 @@ import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
 
 // Data
-import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
+import {reportsBarChartData, planos} from "layouts/dashboard/data/reportsBarChartData";
 import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
 // Dashboard components
@@ -77,7 +77,7 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="success"
                 icon="store"
-                title="Revenue"
+                title="Receita total"
                 count="34k"
                 percentage={{
                   color: "success",
@@ -108,7 +108,7 @@ function Dashboard() {
             <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
                 <ReportsBarChart
-                  color="info"
+                  color="dark"
                   title="Acessos na plataforma"
                   description="Last Campaign Performance"
                   date="campaign sent 2 days ago"
@@ -134,11 +134,22 @@ function Dashboard() {
             <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
                 <ReportsLineChart
-                  color="dark"
+                  color="primary"
                   title="completed tasks"
                   description="Last Campaign Performance"
                   date="just updated"
                   chart={tasks}
+                />
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <MDBox mb={3}>
+                <ReportsBarChart
+                  color="dark"
+                  title="Planos Vendidos"
+                  description="Total de planos vendidos na plataforma"
+                  date="10/2023"
+                  chart={planos}
                 />
               </MDBox>
             </Grid>

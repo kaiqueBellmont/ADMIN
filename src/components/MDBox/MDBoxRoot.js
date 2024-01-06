@@ -47,10 +47,12 @@ export default styled(Box)(({ theme, ownerState }) => {
     "error",
     "dark",
     "light",
+    "cyan"
   ];
 
   const validColors = [
     "transparent",
+    "cyan",
     "white",
     "black",
     "primary",
