@@ -6,3 +6,24 @@
 .MuiSelect-select {
   padding: 0 !important;
 }
+
+/* Defina a largura da barra de rolagem e a cor desejada */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: #ec407a; /* Cor da barra de rolagem */
+  border-radius: 4px; /* Borda arredondada */
+}
+
+/* Estilo da alça de arrastar da barra de rolagem */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Cor de fundo da barra de rolagem */
+}
+
+/* Estilo da alça de arrastar quando o cursor passa por cima */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff4081; /* Cor da barra de rolagem ao passar o mouse por cima */
+}

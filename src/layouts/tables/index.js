@@ -1,17 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 import styles from './index.module.scss'
 import React, { useState } from 'react';
 
@@ -39,16 +25,61 @@ import MDButton from "components/MDButton";
 import SelectTextFields from 'components/selects/index'
 import SimpleInput from 'components/inputs/index'
 
+import api from '../../api/course'; // Substitua 'path-para-o-arquivo' pelo caminho real para o arquivo api.js
+import AddCourseForm from 'components/forms/courseFom';
+
 
 function Tables() {
-  const [selectedTopic, setSelectedTopic] = useState(null);
+  const [formData, setFormData] = useState({
+    topico: '',
+    level: '',
+    titulo: '',
+    descricao: '',
+    imageUrl: '',
+  });
 
 
   const { columns, rows } = authorsTableData();
   const { columns: pColumns, rows: pRows } = projectsTableData();
 
-  const handleTopicChange = (value) => {
-    setSelectedTopic(value);
+  const handleTopicChange = (field, value) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [field]: value,
+    }));
+  };
+
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    const teste = {
+      title: formData.titulo,
+      description: formData.descricao,
+      image_url: formData.imageUrl,
+      topic_id: formData.topico,
+      level_id: formData.level,
+    };
+
+    console.log('====================================');
+    console.log(teste);
+    console.log('====================================');
+
+    try {
+      const addedCourse = await api.addCourse({
+        title: formData.titulo,
+        description: formData.descricao,
+        image_url: formData.imageUrl,
+        topic_id: formData.topico,
+        level_id: formData.level,
+      });
+
+      console.log('Curso adicionado:', addedCourse);
+      openSuccessSB();
+    } catch (error) {
+      console.error('Erro ao adicionar o curso:', error.message);
+      openErrorSB();
+    }
   };
 
   const [successSB, setSuccessSB] = useState(false);
@@ -101,28 +132,8 @@ function Tables() {
                   Adicionar Cursos
                 </MDTypography>
               </MDBox>
-
               <MDBox pt={3}>
-                <div className={styles.add_courses_wrapper}>
-                  <div className={styles.courses}>
-                    <SelectTextFields onTopicChange={handleTopicChange} />
-                    <SelectTextFields onTopicChange={handleTopicChange} />
-                    <SelectTextFields onTopicChange={handleTopicChange} />
-                    <SimpleInput />
-                  </div>
-                  <MDButton
-                    variant="gradient"
-                    color="success"
-                    onClick={() => {
-                      openSuccessSB();
-                      console.log('Valor selecionado:', selectedTopic);
-                    }}
-                    className={styles.button}
-                  >
-                    Adicionar Curso
-                  </MDButton>
-                  {renderSuccessSB}
-                </div>
+                <AddCourseForm />
               </MDBox>
             </Card>
           </Grid>

@@ -115,7 +115,7 @@ const colors = {
     },
 
     info: {
-      main: "#EC407A",
+      main: "#00FFFF",
       state: "#EC407A",
     },
 
